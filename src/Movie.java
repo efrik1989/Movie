@@ -1,8 +1,11 @@
+import java.util.ArrayList;
+
 public class Movie {
     int hallsNumber;
     String address;
     String startTime;
     String endTime;
+    ArrayList<Hall> halls  = new ArrayList<Hall>();
 
     {
         startTime = "10:00";
@@ -54,5 +57,11 @@ public class Movie {
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
+    }
+
+    void createHalls(int hallsNumber) {
+        for (int i = 1; i <= hallsNumber; i++ ) {
+            halls.add(new Hall());
+        }
     }
 }
