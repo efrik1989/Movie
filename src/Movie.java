@@ -59,9 +59,10 @@ public class Movie {
         this.endTime = endTime;
     }
 
-    void createHalls(int hallsNumber) {
+    void createHalls() {
         for (int i = 1; i <= hallsNumber; i++ ) {
             halls.add(new Hall());
         }
     }
+
 }

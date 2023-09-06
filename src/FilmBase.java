@@ -1,18 +1,18 @@
 import java.util.ArrayList;
 
 public class FilmBase {
-    private static FilmBase filmBase;
-    ArrayList<Film> films;
+    private static final FilmBase instance = new FilmBase();
+    ArrayList<Film> films = new ArrayList<>();
 
-    public FilmBase() {
-        films = new ArrayList<>();
+    private FilmBase(){
+
     }
 
     public FilmBase getInstance() {
-        if (filmBase == new FilmBase()) {
-
+        if (instance == null) {
+            return new FilmBase();
         }
-        return filmBase;
+        return instance;
     }
 
     public void addFilm(Film film) {
@@ -24,17 +24,19 @@ public class FilmBase {
     }
     //TODO: Коряво работает надо потестить и подправить.
     private Film searchFilm(String string) throws Exception {
+        System.out.println("Films count: " + films.size());
         for (Film film : films) {
-            if (film.getFilmName().equals(string)) {
+            System.out.println(film.getFilmName() + " string: " + string );
+            if (film.getFilmName().matches(".*" + string + ".*")) {
                 return film;
             }
-            if (film.getDescription().equals(string)) {
+            if (film.getDescription().matches(".*" + string + ".*")) {
                 return film;
             }
-            if (film.getDirector().equals(string)) {
+            if (film.getDirector().matches(".*" + string + ".*")) {
                 return film;
             }
-            if (film.getDuration().equals(string)) {
+            if (film.getDuration().matches(".*" + string + ".*")) {
                 return film;
             }
         }
