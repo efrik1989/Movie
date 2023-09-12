@@ -15,7 +15,7 @@ public class Main {
 
     private static void hireTheCrew() {
         System.out.println("Hire the crew...");
-        employeeBase = new EmployeeBase();
+        employeeBase = EmployeeBase.getInstance();
         employeeBase.addEmployee(new Employee("director"));
         employeeBase.addEmployee(new Employee("ticketTrader"));
         employeeBase.addEmployee(new Employee("cleaner"));
@@ -25,16 +25,15 @@ public class Main {
     private static void createTheSchedule() throws Exception {
         System.out.println("Create session's schedule...");
         schedule = new Schedule();
-        schedule.sessionList.add(new Session(filmBase.getInstance().getFilm("Terminator"), "15.00"));
-        schedule.sessionList.add(new Session(filmBase.getFilm("Terminator2"), "17.00"));
-        schedule.sessionList.add(new Session(filmBase.getFilm("Catch if you can"), "19.00"));
+        schedule.sessionList.add(new Session(FilmBase.getInstance().getFilm("Terminator"), "15.00"));
+        schedule.sessionList.add(new Session(FilmBase.getInstance().getFilm("Terminator2"), "17.00"));
+        schedule.sessionList.add(new Session(FilmBase.getInstance().getFilm("Catch if you can"), "19.00"));
         System.out.println("Schedule - done...");
     }
 
     private static void createTheFilmBase() {
         System.out.println("Create filmBase...");
-        //TODO: Как блядь использовать синглтон?
-        FilmBase filmBase = FilmBase.;
+        FilmBase filmBase = FilmBase.getInstance();
         filmBase.addFilm(new Film("Terminator", "92 min."));
         filmBase.addFilm(new Film("Terminator2", "93 min."));
         filmBase.addFilm(new Film("Catch if you can", "122 min."));
