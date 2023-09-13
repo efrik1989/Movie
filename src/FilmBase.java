@@ -1,18 +1,18 @@
 import java.util.ArrayList;
 
 public class FilmBase {
-    private static FilmBase filmBase;
-    ArrayList<Film> films;
+    private static final FilmBase INSTANCE = new FilmBase();
+    ArrayList<Film> films = new ArrayList<>();
 
-    public FilmBase() {
-        films = new ArrayList<>();
+    private FilmBase(){
+
     }
 
-    public FilmBase getInstance() {
-        if (filmBase == new FilmBase()) {
-
+    public static FilmBase getInstance() {
+        if (INSTANCE == null) {
+            return new FilmBase();
         }
-        return filmBase;
+        return INSTANCE;
     }
 
     public void addFilm(Film film) {
@@ -23,18 +23,25 @@ public class FilmBase {
         return searchFilm(filmName);
     }
     //TODO: Коряво работает надо потестить и подправить.
-    private Film searchFilm(String string) throws Exception {
+    public Film searchFilm(String string) throws Exception {
+        System.out.println("Films count: " + films.size());
         for (Film film : films) {
-            if (film.getFilmName().equals(string)) {
+            String name = film.getFilmName();
+            String description = film.getDescription();
+            String director = film.getDirector();
+            String duration = film.getDuration();
+            System.out.println( name + " string: " + string );
+            if (name.matches(".*" + string + ".*")) {
+                System.out.println(film.getClass().toString());
                 return film;
             }
-            if (film.getDescription().equals(string)) {
+            if (description.matches(".*" + string + ".*")) {
                 return film;
             }
-            if (film.getDirector().equals(string)) {
+            if (director.matches(".*" + string + ".*")) {
                 return film;
             }
-            if (film.getDuration().equals(string)) {
+            if (duration.matches(".*" + string + ".*")) {
                 return film;
             }
         }

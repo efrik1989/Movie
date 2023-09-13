@@ -2,13 +2,13 @@ import java.util.ArrayList;
 
 public class EmployeeBase {
     ArrayList<Employee> employees = new ArrayList<Employee>();
-    EmployeeBase employeeBase;
+    private static final EmployeeBase INSTANCE = new EmployeeBase();
 
-    public EmployeeBase getInstance() {
-        if (employeeBase == null) {
+    public static EmployeeBase getInstance() {
+        if (INSTANCE == null) {
             return new EmployeeBase();
         }
-        return employeeBase;
+        return INSTANCE;
     }
 
     void addEmployee(Employee employee) {
