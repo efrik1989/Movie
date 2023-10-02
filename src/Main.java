@@ -24,7 +24,7 @@ public class Main {
 
     private static void createTheSchedule() throws Exception {
         System.out.println("Create session's schedule...");
-        schedule = new Schedule();
+        schedule = Schedule.getInstance();
         schedule.sessionList.add(new Session(FilmBase.getInstance().getFilm("Terminator"), "15.00"));
         schedule.sessionList.add(new Session(FilmBase.getInstance().getFilm("Terminator2"), "17.00"));
         schedule.sessionList.add(new Session(FilmBase.getInstance().getFilm("Catch if you can"), "19.00"));

@@ -1,19 +1,19 @@
 import java.util.ArrayList;
 
 public class Schedule {
-    ArrayList<Session> sessionList;
+    ArrayList<Session> sessionList = new ArrayList<Session>();
 
-    private static Schedule schedule;
+    private static final Schedule INSTANCE = new Schedule();
 
     public static Schedule getInstance() {
-        if (schedule == null) {
+        if (INSTANCE == null) {
             return new Schedule();
         }
-        return schedule;
+        return INSTANCE;
     }
 
     public Session getSession(String time, String filmName) {
-        for (Session ses : schedule.getSessionsList()) {
+        for (Session ses : INSTANCE.getSessionsList()) {
             if ((ses.getTime()).equals(time) && (ses.getFilm().getFilmName()).equals(filmName)) {
                 return ses;
             }

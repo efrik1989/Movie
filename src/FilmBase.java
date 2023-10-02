@@ -35,13 +35,13 @@ public class FilmBase {
                 System.out.println(film.getClass().toString());
                 return film;
             }
-            if (description.matches(".*" + string + ".*")) {
+            if (description != null && description.matches(".*" + string + ".*")) {
                 return film;
             }
-            if (director.matches(".*" + string + ".*")) {
+            if (director != null && director.matches(".*" + string + ".*")) {
                 return film;
             }
-            if (duration.matches(".*" + string + ".*")) {
+            if (duration != null && duration.matches(".*" + string + ".*")) {
                 return film;
             }
         }

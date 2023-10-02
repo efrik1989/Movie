@@ -26,4 +26,9 @@ public class Session {
     public void setFilm(Film film) {
         this.film = film;
     }
+
+    public void print() {
+        System.out.println(this.getTime() + " " + this.getFilm());
+    }
+
 }
