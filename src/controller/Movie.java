@@ -1,3 +1,7 @@
+package controller;
+
+import model.Hall;
+
 import java.util.ArrayList;
 
 public class Movie {
