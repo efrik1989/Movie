@@ -1,3 +1,5 @@
+import model.Session;
+
 import java.util.ArrayList;
 
 public class Schedule {
@@ -15,6 +17,7 @@ public class Schedule {
     public Session getSession(String time, String filmName) {
         for (Session ses : INSTANCE.getSessionsList()) {
             if ((ses.getTime()).equals(time) && (ses.getFilm().getFilmName()).equals(filmName)) {
+                ses.print();
                 return ses;
             }
         }

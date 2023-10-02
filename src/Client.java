@@ -1,8 +1,16 @@
-public class Client extends Person implements BuyTickets{
+import model.*;
+
+public class Client extends Person implements BuyTickets {
     @Override
     public void buyTheTicket(String time, String filmName) {
+        System.out.print("Client buy the ticket - ");
         Schedule schedule = Schedule.getInstance();
 
-        schedule.getSession(time, filmName);
+        Session session = schedule.getSession(time, filmName);
+
+        Ticket ticket = new Ticket(session.getTime(), session.getFilm().getFilmName(), 1, 15);
+        ticket.print();
+
+        System.out.println("done...");
     }
 }

@@ -1,7 +1,11 @@
+import model.Film;
+import model.Session;
+
 public class Main {
 
     static Schedule schedule;
     static EmployeeBase employeeBase;
+
     public static void main(String[] args) throws Exception {
         createTheMovie();
         createTheFilmBase();
@@ -9,7 +13,7 @@ public class Main {
         hireTheCrew();
 
         Client client = new Client();
-        client.buyTheTicket("17:00", "Терминатор2");
+        client.buyTheTicket("17:00", "Terminator2");
 
     }
 
@@ -25,9 +29,9 @@ public class Main {
     private static void createTheSchedule() throws Exception {
         System.out.println("Create session's schedule...");
         schedule = Schedule.getInstance();
-        schedule.sessionList.add(new Session(FilmBase.getInstance().getFilm("Terminator"), "15.00"));
-        schedule.sessionList.add(new Session(FilmBase.getInstance().getFilm("Terminator2"), "17.00"));
-        schedule.sessionList.add(new Session(FilmBase.getInstance().getFilm("Catch if you can"), "19.00"));
+        schedule.sessionList.add(new Session(FilmBase.getInstance().getFilm("Terminator"), "15:00"));
+        schedule.sessionList.add(new Session(FilmBase.getInstance().getFilm("Terminator2"), "17:00"));
+        schedule.sessionList.add(new Session(FilmBase.getInstance().getFilm("Catch if you can"), "19:00"));
         System.out.println("Schedule - done...");
     }
 
