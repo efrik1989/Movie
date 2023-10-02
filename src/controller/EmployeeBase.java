@@ -1,3 +1,7 @@
+package controller;
+
+import model.Employee;
+
 import java.util.ArrayList;
 
 public class EmployeeBase {

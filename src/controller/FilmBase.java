@@ -1,3 +1,5 @@
+package controller;
+
 import model.Film;
 
 import java.util.ArrayList;

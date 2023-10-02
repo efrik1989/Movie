@@ -1,3 +1,5 @@
+package model;
+
 import model.BuyTickets;
 
 public class Employee extends Person implements BuyTickets {
