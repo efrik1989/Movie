@@ -1,3 +1,5 @@
+import model.Film;
+
 import java.util.ArrayList;
 
 public class FilmBase {
@@ -24,15 +26,12 @@ public class FilmBase {
     }
     //TODO: Коряво работает надо потестить и подправить.
     public Film searchFilm(String string) throws Exception {
-        System.out.println("Films count: " + films.size());
         for (Film film : films) {
             String name = film.getFilmName();
             String description = film.getDescription();
             String director = film.getDirector();
             String duration = film.getDuration();
-            System.out.println( name + " string: " + string );
             if (name.matches(".*" + string + ".*")) {
-                System.out.println(film.getClass().toString());
                 return film;
             }
             if (description != null && description.matches(".*" + string + ".*")) {

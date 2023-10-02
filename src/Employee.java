@@ -1,4 +1,6 @@
-public class Employee extends Person implements BuyTickets{
+import model.BuyTickets;
+
+public class Employee extends Person implements BuyTickets {
     String position;
 
     public Employee(String position) {

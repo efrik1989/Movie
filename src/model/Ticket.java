@@ -1,3 +1,5 @@
+package model;
+
 public class Ticket {
     String time;
     String FilmName;
@@ -43,7 +45,7 @@ public class Ticket {
         this.place = place;
     }
 
-    void print() {
+    public void print() {
         System.out.println("Время: " + this.getTime() +
                 ", Зал: " + this.hallNumber +
                 ", Место: " + this.place +

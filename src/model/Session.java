@@ -1,7 +1,17 @@
+package model;
+
+import model.Film;
 
 public class Session {
     String time;
     Film film;
+    int hallNumber;
+
+    public Session(String time, Film film, int hallNumber) {
+        this.time = time;
+        this.film = film;
+        this.hallNumber = hallNumber;
+    }
 
     public Session(Film film, String time) {
         this.time = time;
@@ -28,7 +38,7 @@ public class Session {
     }
 
     public void print() {
-        System.out.println(this.getTime() + " " + this.getFilm());
+        System.out.println("Сеанс: " + this.getTime() + " " + this.getFilm().getFilmName());
     }
 
 }
